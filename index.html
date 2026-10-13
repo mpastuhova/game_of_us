@@ -11,9 +11,9 @@
 <body>
 <header class="hero" id="welcome">
  <div class="hero-inner">
-  <p class="eyebrow">За вечен спомен <3 · 15.10.2022 — 15.10. 2026</p>
+  <p class="eyebrow">За вечен спомен <3 15.10.2022 — 15.10. 2026</p>
   <h1>Игра<br><em>за нас</em></h1>
-  <p class="intro">Една игра за нашата годишнина<br>Make the opening move to begin our next chapter.</p>
+  <p class="intro">Една игра за нашата годишнина<br>Изиграй оупънинг муув-а, за да достъпиш към сайта</p>
   <div class="board-frame" aria-label="Interactive chessboard. Select the white pawn on e2, then its highlighted move on e4."><div class="board" id="chessboard"></div></div>
   <p class="move-note" id="moveNote" aria-live="polite">Ехоо,пробвай да мръднеш затъмнената пешка с два хода напред</p>
   <button class="btn" id="enterBtn">Цууун↗</button>
@@ -44,10 +44,10 @@
   <div class="track"><div class="track-no">♫</div><div><h3>Нашата песничка</h3><p>Artist · What does it remind you of?</p></div><a href="https://open.spotify.com/track/18sytW2s53Of6NVudQyUlH?si=79ad3e1855cd4218" target="_blank" rel="noopener">Listen ↗</a></div>
   <div class="track"><div class="track-no">♫</div><div><h3>И една песен за да манифестнем бъдещето</h3><p>Artist · A song for all that's still ahead</p></div><a href="https://open.spotify.com/track/18sytW2s53Of6NVudQyUlH?si=79ad3e1855cd4218" target="_blank" rel="noopener">Listen ↗</a></div>
  
-<section class="section" id="secrets"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Look a little closer</p><h2>Secret<br><em>moves.</em></h2></div><p>Some things are better when you find them by accident. Click around — not everything here is what it seems.</p></div>
+<section class="section" id="secrets"><div class="wrap"><div class="section-head"><div><p class="eyebrow">Разгледай по-подробно</p><h2>Secret<br><em>moves.</em></h2></div><p>Разцъкай фигурките, виж какво ще стане</p></div>
  <div class="secrets-grid">
-  <button class="secret" data-secret="Обичам да изкчачвам альоооша с теб докато ти пея дон патрон и те цункам"><span class="icon">♘</span><strong>A knight's secret</strong><br><span>Май има нещо тукк..</span></button>
-  <button class="secret" data-secret="Обичам да гледаме филмчета у вас и да се гушкаме и да ни болят пупите от папане"><span class="icon">♡</span><strong>A little heart</strong><br><span>И тукккк.</span></button>
+  <button class="secret" data-secret="Обичам да изкчачвам альоооша с теб докато ти пея дон патрон и те цункам"><span class="icon">♘</span><strong>Май коня има тайнаа</strong><br><span>Май има нещо тукк..</span></button>
+  <button class="secret" data-secret="Обичам да гледаме филмчета у вас и да се гушкаме и да ни болят пупите от папане"><span class="icon">♡</span><strong>Малка цун</strong><br><span>И тукккк.</span></button>
   <button class="secret" data-secret="Обичам да играем шах заедно и да се лигавим и да играя моята игра"><span class="icon">♔</span><strong>Дъ файнъл парт</strong><br><span>Последноо</span></button>
  </div>
  
@@ -62,7 +62,7 @@ const files='abcdefgh';
 const start={a8:'♜',b8:'♞',c8:'♝',d8:'♛',e8:'♚',f8:'♝',g8:'♞',h8:'♜',a7:'♟',b7:'♟',c7:'♟',d7:'♟',e7:'♟',f7:'♟',g7:'♟',h7:'♟',a2:'♙',b2:'♙',c2:'♙',d2:'♙',e2:'♙',f2:'♙',g2:'♙',h2:'♙',a1:'♖',b1:'♘',c1:'♗',d1:'♕',e1:'♔',f1:'♗',g1:'♘',h1:'♖'};
 let pieces={...start},selected=null,moved=false;
 function drawBoard(){boardEl.innerHTML='';for(let r=8;r>=1;r--){for(let c=0;c<8;c++){const sq=files[c]+r,btn=document.createElement('button');btn.className='sq '+(((r+c)%2===0)?'dark':'');btn.setAttribute('aria-label',sq+(pieces[sq]?', '+pieces[sq]:' empty square'));btn.dataset.square=sq;if(pieces[sq]){const span=document.createElement('span');span.className='piece';span.textContent=pieces[sq];btn.append(span)}if(sq==='e4'&&!moved)btn.classList.add('target');if(selected===sq)btn.classList.add('selected');if(selected==='e2'&&sq==='e4'&&!moved)btn.classList.add('target');btn.addEventListener('click',()=>clickSquare(sq));boardEl.append(btn)}}}
-function clickSquare(sq){const note=document.getElementById('moveNote');if(moved)return;if(sq==='e2'&&!selected){selected='e2';note.textContent='Сега си премести пешката на е4.';drawBoard();return}if(selected==='e2'&&sq==='e4'){pieces.e4=pieces.e2;delete pieces.e2;selected=null;moved=true;drawBoard();note.textContent='Оупънинг муув';setTimeout(enterSite,750);return}if(sq==='e2'){selected='e2';note.textContent='Избери подчертаното- е4.'}else{selected=null;note.textContent='Try the white pawn on e2, then move it to e4.'}drawBoard()}
+function clickSquare(sq){const note=document.getElementById('moveNote');if(moved)return;if(sq==='e2'&&!selected){selected='e2';note.textContent='Сега си премести пешката на е4.';drawBoard();return}if(selected==='e2'&&sq==='e4'){pieces.e4=pieces.e2;delete pieces.e2;selected=null;moved=true;drawBoard();note.textContent='БАЛЛЛ';setTimeout(enterSite,750);return}if(sq==='e2'){selected='e2';note.textContent='Избери подчертаното- е4.'}else{selected=null;note.textContent='Try the white pawn on e2, then move it to e4.'}drawBoard()}
 function enterSite(){document.getElementById('welcome').classList.add('hidden');document.getElementById('mainNav').classList.remove('hidden');const main=document.getElementById('mainContent');main.classList.remove('hidden');main.classList.add('reveal');window.scrollTo({top:0,behavior:'smooth'})}
 document.getElementById('enterBtn').addEventListener('click',enterSite);drawBoard();
 const modal=document.getElementById('modal'),modalTitle=document.getElementById('modalTitle'),modalBody=document.getElementById('modalBody');function openModal(title,text,image){modalTitle.textContent=title;modalBody.innerHTML='';if(image){const img=document.createElement('img');img.src=image;img.alt=title;modalBody.append(img)}const p=document.createElement('p');p.textContent=text;modalBody.append(p);modal.classList.remove('hidden');modal.querySelector('.modal-close').focus()}function closeModal(){modal.classList.add('hidden')};modal.querySelector('.modal-close').addEventListener('click',closeModal);modal.querySelector('.modal-done').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
