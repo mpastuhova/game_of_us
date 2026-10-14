@@ -1,4 +1,5 @@
 
+
 <!doctype html>
 <html lang="bg">
 <head>
@@ -731,13 +732,13 @@ document.getElementById('finalSecret').addEventListener('click', () => {
   openModal('P.S. ♡', 'Обичам те повече от всичко на света, вечна любов моя <3');
 });
 
-// Load gallery photos on the cards and open them in the larger photo window.
+// Load gallery photos on the cards and open only their messages when clicked.
 document.querySelectorAll('.photo-card').forEach(card => {
   const path = card.dataset.image;
   const art = card.querySelector('.photo-art');
 
   card.addEventListener('click', () => {
-    openModal(card.dataset.title, card.dataset.caption, path || null);
+    openModal(card.dataset.title, card.dataset.caption);
   });
 
   if (!path) return;
